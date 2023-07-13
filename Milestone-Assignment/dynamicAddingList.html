@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add List Items</title>
+  <style>
+    body {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>List Items</h2>
+  <ul id="list"></ul>
+  <button id="addItemButton">Add Item</button>
+
+  <script>
+    const listItems = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"];
+    const listElement = document.getElementById("list");
+    const addButton = document.getElementById("addItemButton");
+    let currentItemIndex = 0;
+
+    addButton.addEventListener("click", function() {
+      if (currentItemIndex < listItems.length) {
+        const newItem = document.createElement("li");
+        newItem.textContent = listItems[currentItemIndex];
+        listElement.appendChild(newItem);
+        currentItemIndex++;
+      } else {
+        addButton.disabled = true;
+        addButton.textContent = "All items added";
+      }
+    });
+  </script>
+</body>
+</html>
