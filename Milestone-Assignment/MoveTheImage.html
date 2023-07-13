@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Move Image</title>
+  <style>
+    #container {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      border: 1px solid black;
+    }
+
+    #image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <img id="image" src="./images/image.png" alt="Image">
+  </div>
+
+  <script>
+    const container = document.getElementById("container");
+    const image = document.getElementById("image");
+    let imageTop = 0;
+    let imageLeft = 0;
+
+    document.addEventListener("keydown", function(event) {
+      const key = event.key;
+      const keyCode = event.keyCode;
+
+      if (key === "ArrowUp" || keyCode === 38) {
+        imageTop -= 10;
+      } else if (key === "ArrowDown" || keyCode === 40) {
+        imageTop += 10;
+      } else if (key === "ArrowLeft" || keyCode === 37) {
+        imageLeft -= 10;
+      } else if (key === "ArrowRight" || keyCode === 39) {
+        imageLeft += 10;
+      }
+
+      image.style.top = imageTop + "px";
+      image.style.left = imageLeft + "px";
+    });
+  </script>
+</body>
+</html>

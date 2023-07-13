@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Color on Click</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    #colorButton {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Change Color on Click</h2>
+  <button id="colorButton">Change Color</button>
+
+  <script>
+    const colorButton = document.getElementById("colorButton");
+    const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
+
+    colorButton.addEventListener("click", function() {
+      const randomIndex = Math.floor(Math.random() * colors.length);
+      const randomColor = colors[randomIndex];
+      document.body.style.backgroundColor = randomColor;
+    });
+  </script>
+</body>
+</html>
